@@ -71,7 +71,7 @@ function App() {
           {menuOpen ? <X /> : <Menu />}
         </button>
         <nav className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation">
-          <button onClick={() => window.location.href = '/contribute.html'}> Contribute</button>
+          <button onClick={() => window.location.href = './contribute.html'}> Contribute</button>
           <button onClick={() => goTo('services')}>Services</button>
           <button onClick={() => goTo('work')}>Portfolio</button>
           <button onClick={() => goTo('about')}>About</button>

@@ -46,7 +46,7 @@ function App() {
       `Hello HajjTech,\n\nI would like to request IT support.\n\nName: ${form.name}\nEmail: ${form.email}\nService: ${form.service}\nUrgency: ${form.urgency}\n\nProblem details:\n${form.details}\n\nPlease contact me about the next steps.`
     )
     setFormMessage('Your request is ready in an email draft. Please send it from your email app to complete the request.')
-    window.location.href = `mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`
+    window.location.href = `support@hajjtech.com?subject=${subject}&body=${body}`
   }
 
   const copyProjectNote = async () => {
@@ -71,6 +71,7 @@ function App() {
           {menuOpen ? <X /> : <Menu />}
         </button>
         <nav className={menuOpen ? 'nav-links open' : 'nav-links'} aria-label="Main navigation">
+          <button onClick={() => window.location.href = '/contribute.html'}> Contribute</button>
           <button onClick={() => goTo('services')}>Services</button>
           <button onClick={() => goTo('work')}>Portfolio</button>
           <button onClick={() => goTo('about')}>About</button>
@@ -121,7 +122,8 @@ function App() {
             <div className="floating-card float-bottom"><span className="float-icon purple"><Code2 size={18}/></span><div><b>Digital projects</b><small>Design. Build. Improve.</small></div></div>
           </div>
         </div>
-        <div className="container hero-bottom"><span>BUILT FOR REAL-WORLD NEEDS</span><div><span>COMPUTER SUPPORT</span><i></i><span>WEB DEVELOPMENT</span><i></i><span>NETWORKING</span><i></i><span>SECURITY GUIDANCE</span></div></div>
+        <div className="container hero-bottom">
+          <span>BUILT FOR REAL-WORLD NEEDS</span><div><span>COMPUTER SUPPORT</span><i></i><span>WEB DEVELOPMENT</span><i></i><span>NETWORKING</span><i></i><span>SECURITY GUIDANCE</span></div></div>
       </section>
 
       <section id="services" className="section services-section">
@@ -202,7 +204,24 @@ function App() {
       <section id="contact" className="contact-strip"><div className="container contact-inner"><div><p className="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Let's make technology <span>work better.</span></h2><p>Describe your challenge and start a conversation about the right next step.</p></div><button className="button button-light" onClick={() => goTo('request')}>Get in touch <ArrowUpRight size={18}/></button></div></section>
     </main>
 
-    <footer className="site-footer"><div className="container footer-main"><a href="#home" className="brand footer-brand"><span className="brand-mark"><MonitorCog size={22}/></span><span className="brand-copy"><strong>HajjTech</strong><small>IT SUPPORT & DIGITAL SOLUTIONS</small></span></a><p>Practical support. Thoughtful solutions. Technology made more manageable.</p><div className="footer-links"><button onClick={() => goTo('services')}>Services</button><button onClick={() => goTo('work')}>Portfolio</button><button onClick={() => goTo('about')}>About</button><button onClick={() => goTo('request')}>Request support</button></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} HajjTech IT Support. All rights reserved.</span><span><MapPin size={14}/> Ghana · Remote support by arrangement</span></div></footer>
+    <footer className="site-footer">
+      <div className="container footer-main">
+        <a href="#home" className="brand footer-brand">
+          <span className="brand-mark"><MonitorCog size={22}/></span>
+          <span className="brand-copy"><strong>HajjTech</strong><small>IT SUPPORT & DIGITAL SOLUTIONS</small></span>
+        </a><p>Practical support. Thoughtful solutions. Technology made more manageable.</p>
+          <div className="footer-links">
+            <button onClick={() => goTo('services')}>Services</button>
+            <button onClick={() => goTo('work')}>Portfolio</button>
+            <button onClick={() => goTo('about')}>About</button>
+            <button onClick={() => goTo('request')}>Request support</button>
+          </div>
+      </div>
+          <div className="container footer-bottom">
+            <span>© {new Date().getFullYear()} HajjTech IT Support. All rights reserved.</span>
+            <span><MapPin size={14}/> Ghana · Remote support by arrangement</span>
+         </div>
+      </footer>
   </div>
 }
 

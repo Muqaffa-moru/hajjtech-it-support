@@ -4,6 +4,7 @@ import {
   Code2, Laptop, Menu, MessageCircle, MonitorCog, Network, ShieldCheck,
   Wrench, X, Zap, CircleHelp, Mail, MapPin, Clock3, Send, BriefcaseBusiness
 } from 'lucide-react'
+import { Analytics } from "@vercel/analytics/next"
 
 const services = [
   { icon: Laptop, number: '01', title: 'Computer support', text: 'Troubleshooting, software installation, system updates and practical maintenance to keep devices working smoothly.', tags: ['Windows', 'Software', 'Maintenance'] },
@@ -203,7 +204,7 @@ function App() {
 
       <section id="contact" className="contact-strip"><div className="container contact-inner"><div><p className="eyebrow">HAVE A PROJECT IN MIND?</p><h2>Let's make technology <span>work better.</span></h2><p>Describe your challenge and start a conversation about the right next step.</p></div><button className="button button-light" onClick={() => goTo('request')}>Get in touch <ArrowUpRight size={18}/></button></div></section>
     </main>
-
+    <Analytics />
     <footer className="site-footer">
       <div className="container footer-main">
         <a href="#home" className="brand footer-brand">
